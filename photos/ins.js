@@ -110,14 +110,41 @@
           addMask($videoImg[i]);
         }
       };
+      // var render = function render(res) {
+      //   var ulTmpl = "";
+      //   for (var j = 0, len2 = res.list.length; j < len2; j++) {
+      //     var data = res.list[j].arr;
+      //     var liTmpl = "";
+      //     for (var i = 0, len = data.link.length; i < len; i++) {
+      //       var minSrc = 'https://raw.githubusercontent.com/ldl8631/BackupBlog/master/min_photos/' + data.link[i];
+      //       var src = 'https://raw.githubusercontent.com/ldl8631/BackupBlog/master/photos/' + data.link[i];
+      //       var type = data.type[i];
+      //       var target = src + (type === 'video' ? '.mp4' : '.jpg');
+      //       src += '';
+
+      //       liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
+      //             <a href="' + src + '" itemprop="contentUrl" data-size="1080x1080" data-type="' + type + '" data-target="' + src + '">\
+      //               <img class="reward-img" data-type="' + type + '" data-src="' + minSrc + '" src="/assets/img/empty.png" itemprop="thumbnail" onload="lzld(this)">\
+      //             </a>\
+      //             <figcaption style="display:none" itemprop="caption description">' + data.text[i] + '</figcaption>\
+      //         </figure>';
+      //     }
+      //     ulTmpl = ulTmpl + '<section class="archives album"><h1 class="year">' + data.year + '年<em>' + data.month + '月</em></h1>\
+      //     <ul class="img-box-ul">' + liTmpl + '</ul>\
+      //     </section>';
+      //   }
+      //   document.querySelector('.instagram').innerHTML = '<div class="photos" itemscope="" itemtype="http://schema.org/ImageGallery">' + ulTmpl + '</div>';
+      //   createVideoIncon();
+      //   _view2.default.init();
+      // };
       var render = function render(res) {
         var ulTmpl = "";
         for (var j = 0, len2 = res.list.length; j < len2; j++) {
           var data = res.list[j].arr;
           var liTmpl = "";
           for (var i = 0, len = data.link.length; i < len; i++) {
-            var minSrc = 'https://github.com/ldl8631/BackupBlog/tree/master/min_photos/' + data.link[i];
-            var src = 'https://github.com/ldl8631/BackupBlog/tree/master/photos/' + data.link[i];
+            var minSrc = 'https://raw.githubusercontent.com/ldl8631/BackupBlog/master/min_photos/' + data.link[i];
+            var src = 'https://raw.githubusercontent.com/ldl8631/BackupBlog/master/photos/' + data.link[i];
             var type = data.type[i];
             var target = src + (type === 'video' ? '.mp4' : '.jpg');
             src += '';
@@ -126,10 +153,10 @@
                   <a href="' + src + '" itemprop="contentUrl" data-size="1080x1080" data-type="' + type + '" data-target="' + src + '">\
                     <img class="reward-img" data-type="' + type + '" data-src="' + minSrc + '" src="/assets/img/empty.png" itemprop="thumbnail" onload="lzld(this)">\
                   </a>\
-                  <figcaption style="display:none" itemprop="caption description">' + data.text[i] + '</figcaption>\
+                  \
               </figure>';
           }
-          ulTmpl = ulTmpl + '<section class="archives album"><h1 class="year">' + data.year + '年<em>' + data.month + '月</em></h1>\
+          ulTmpl = ulTmpl + '<section class="archives album">\
           <ul class="img-box-ul">' + liTmpl + '</ul>\
           </section>';
         }
@@ -137,6 +164,7 @@
         createVideoIncon();
         _view2.default.init();
       };
+
 
       var replacer = function replacer(str) {
         var arr = str.split("/");

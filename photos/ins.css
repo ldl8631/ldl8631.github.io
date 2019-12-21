@@ -24,6 +24,7 @@
 .instagram .year{
 	display: inline;
 }
+/* 新增 开始*/
 .instagram .thumb {
 	width: 25%;
 	height: 0; 
@@ -34,14 +35,37 @@
 	background: #ededed;
 	outline: 1px solid #ddd;
 }
+/*新增 结束 */
+
+/* .instagram .thumb {
+	width: 25%;
+	height: 0; 
+	padding-bottom: 25%;
+	position: relative;
+	display: inline-block;
+	text-align: center;
+	background: #ededed;
+	outline: 1px solid #ddd;
+} */
+
 .instagram .thumb a {
 	position: relative;
 }
+
+/* 新增 开始*/
+.instagram .album h1{
+	font-size: 0;
+}
 .instagram .album h1 em{
+	font-size: 0;
+}
+/*新增 结束 */
+
+/* .instagram .album h1 em{
 	font-style: normal;
 	font-size: 14px;
 	margin-left: 10px;
-}
+} */
 .instagram .album ul{
 	display: flex;
 	flex-wrap: wrap;
@@ -142,4 +166,6 @@
 		width: 90%;
 		height: 90%;
 	}
+	
 }
+
